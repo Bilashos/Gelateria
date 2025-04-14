@@ -58,8 +58,6 @@ export class NotificationListComponent {
       elementi = (this.notifications.length - this.pageIndex * this.pageSize);
     }
     this.notificationsView = this.notifications.slice(this.pageIndex * this.pageSize, (this.pageIndex * this.pageSize) + elementi);
-    
-    
   }
 
   // Metodo per caricare le notifiche
@@ -74,7 +72,6 @@ export class NotificationListComponent {
             this.notifications = notifications.filter(notifica => !notifica.read);
           }
           this.setNotificationsVariable();
-          
         },
         (error: any) => {
           console.error('Errore durante il recupero delle notifiche:', error);
@@ -124,7 +121,6 @@ export class NotificationListComponent {
     this.notifyService.updateNotification(notification._id, notification.read).subscribe(
       (response) => {
         this.loadNotify();
-        this.notifyService.notifySubscribers();
       },
       (error: any) => {
         console.error('Errore durante l\'aggiornamento dello stato di lettura della notifica:', error);

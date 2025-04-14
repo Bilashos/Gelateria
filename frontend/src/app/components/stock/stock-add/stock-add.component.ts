@@ -60,8 +60,6 @@ export class StockAddComponent implements OnInit {
   // Metodo per impostare il prezzo basato sull'ingrediente selezionato e la quantità di movimento
   setPrice(): void {
     const ingredient = this.ingredients.find(ingredient => ingredient._id === this.ingredientId);
-    console.log(ingredient);
-    
     if (ingredient) {
       this.price = parseFloat((ingredient.mediumPrice * this.movementQuantity).toFixed(2));
     }

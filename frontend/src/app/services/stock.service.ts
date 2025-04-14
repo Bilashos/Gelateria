@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class StockService {
-  private apiUrl = environment.apiUrl + "/stock"; // URL del server API per i movimenti di stock
+  private apiUrl = environment.apiUrl + "/api/stock"; // URL del server API per i movimenti di stock
 
   constructor(private http: HttpClient, private generalService: GeneralService) { }
 
